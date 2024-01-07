@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Me perdonas?</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #mensaje {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    #btnSi, #btnNo {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #btnNo {
+      position: absolute;
+      animation: moveRandom 3s infinite;
+    }
+
+    @keyframes moveRandom {
+      0% { top: 0; left: 0; }
+      25% { top: 0; left: 75%; }
+      50% { top: 75%; left: 75%; }
+      75% { top: 75%; left: 0; }
+      100% { top: 0; left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="mensaje">
+    <h1>¿Me perdonas?</h1>
+    <button id="btnSi" onclick="alert('¡Gracias por perdonar!')">Sí</button>
+    <button id="btnNo" onclick="startMoving()">No</button>
+  </div>
+
+  <script>
+    function startMoving() {
+      var btnNo = document.getElementById('btnNo');
+      btnNo.style.position = 'absolute';
+      btnNo.style.animation = 'moveRandom 1s infinite';
+    }
+  </script>
+</body>
+</html>
